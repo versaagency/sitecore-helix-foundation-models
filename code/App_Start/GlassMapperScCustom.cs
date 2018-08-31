@@ -1,10 +1,10 @@
-using Glass.Mapper.Configuration;
+﻿using Glass.Mapper.Configuration;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
-namespace Sitecore.Project.Common.App_Start
+namespace Sitecore.Foundation.Models.App_Start
 {
     public static class GlassMapperScCustom
     {

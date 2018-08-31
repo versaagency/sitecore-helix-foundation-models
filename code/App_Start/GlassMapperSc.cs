@@ -1,9 +1,9 @@
-using Glass.Mapper.Maps;
+﻿using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.Configuration.Fluent;
 using Glass.Mapper.Sc.IoC;
 using Sitecore.Pipelines;
 
-namespace Sitecore.Project.Common.App_Start
+namespace Sitecore.Foundation.Models.App_Start
 {
     public class GlassMapperSc
     {
