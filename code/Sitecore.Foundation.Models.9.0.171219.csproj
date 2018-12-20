@@ -37,13 +37,16 @@
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Extensions\IBaseItemExtensions.cs" />
+    <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Models\BaseItem.cs" />
     <Compile Include="Models\BaseLookupItem.cs" />
     <Compile Include="Models\CollectionResult.cs" />
     <Compile Include="Models\ImageResult.cs" />
     <Compile Include="Models\Interfaces\IBaseItem.cs" />
+    <Compile Include="Models\Interfaces\IFile.cs" />
     <Compile Include="Models\LinkResult.cs" />
     <Compile Include="Services\ModelService.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

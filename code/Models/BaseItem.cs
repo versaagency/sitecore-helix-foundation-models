@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Glass.Mapper.Sc.Configuration;
 using Glass.Mapper.Sc.Configuration.Attributes;
+using Sitecore.Data.Items;
 using Sitecore.Foundation.Models.Models.Interfaces;
 
 namespace Sitecore.Foundation.Models.Models
@@ -11,10 +12,10 @@ namespace Sitecore.Foundation.Models.Models
         [SitecoreId]
         public virtual Guid Id { get; set; }
 
-        [SitecoreField("__Workflow state")]
+        [SitecoreField(Templates.BaseItem.Fields.WorkflowState_String)]
         public virtual Guid WorkflowState { get; set; }
 
-        [SitecoreField("__Workflow")]
+        [SitecoreField(Templates.BaseItem.Fields.Workflow_String)]
         public virtual Guid Workflow { get; set; }
 
         [SitecoreInfo(SitecoreInfoType.TemplateId)]
@@ -32,16 +33,16 @@ namespace Sitecore.Foundation.Models.Models
         [SitecoreInfo(SitecoreInfoType.DisplayName)]
         public virtual string DisplayName { get; set; }
 
-        [SitecoreField("__Sortorder")]
+        [SitecoreField(Templates.BaseItem.Fields.SortOrder_String)]
         public virtual int SortOrder { get; set; }
 
         [SitecoreInfo(SitecoreInfoType.Name)]
         public virtual string Name { get; set; }
 
-        [SitecoreField("__Updated")]
+        [SitecoreField(Templates.BaseItem.Fields.Updated_String)]
         public virtual DateTime Updated { get; set; }
 
-        [SitecoreField("__Created")]
+        [SitecoreField(Templates.BaseItem.Fields.Created_String)]
         public virtual DateTime CreatedDate { get; set; }
 
         [SitecoreChildren]
@@ -49,6 +50,9 @@ namespace Sitecore.Foundation.Models.Models
 
         [SitecoreParent]
         public IBaseItem Parent { get; set; }
+
+        [SitecoreItem]
+        public Item Item { get; set; }
 
         public virtual string GetDisplayName()
             => string.IsNullOrWhiteSpace(DisplayName) ? Name : DisplayName;
