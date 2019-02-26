@@ -1,4 +1,6 @@
-﻿using Sitecore.Foundation.Models.Models.Interfaces;
+﻿using Glass.Mapper.Sc;
+using Glass.Mapper.Sc.Fields;
+using Sitecore.Foundation.Models.Models.Interfaces;
 
 namespace Sitecore.Foundation.Models.Extensions
 {
@@ -26,6 +28,21 @@ namespace Sitecore.Foundation.Models.Extensions
             }
 
             return string.Format("{0:0.#} {1}", len, sizes[order]);
+        }
+
+        public static IFile GetIFile(this File file)
+        {
+            return GetIFile(file, new SitecoreContext());
+        }
+
+        public static IFile GetIFile(this File file, ISitecoreContext context)
+        {
+            if (file == null)
+            {
+                throw new System.ArgumentNullException(nameof(file));
+            }
+
+            return context.GetItem<IFile>(file.Id);
         }
     }
 }
