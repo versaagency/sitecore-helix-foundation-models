@@ -45,6 +45,12 @@ namespace Sitecore.Foundation.Models.Models
         [SitecoreField(Templates.BaseItem.Fields.Created_String)]
         public virtual DateTime CreatedDate { get; set; }
 
+        [SitecoreInfo(SitecoreInfoType.Version)]
+        public virtual int Version { get; set; }
+
+        [SitecoreInfo(SitecoreInfoType.Language)]
+        public virtual string Language { get; set; }
+
         [SitecoreChildren]
         public virtual IEnumerable<IBaseItem> Children { get; set; }
 
