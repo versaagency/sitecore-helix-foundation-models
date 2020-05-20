@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Models
+namespace Sitecore.Foundation.Models
 {
     using Sitecore.Data;
 
@@ -6,7 +6,7 @@
     {
         public struct File
         {
-            public const string ID_String = "{D88CCD80-D851-470D-AF11-701FF23504E7}";
+            public const string ID_String = "{962B53C4-F93B-4DF9-9821-415C867B8903}";
             public static ID ID = new ID(ID_String);
 
             public struct Fields

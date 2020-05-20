@@ -2,28 +2,26 @@ using Glass.Mapper.Sc.Configuration.Attributes;
 
 namespace Sitecore.Foundation.Models.Models.Interfaces
 {
-    /// <summary>
-    /// Helpful if you need to display detailed media information. The GlassMapper File object only has Id and Src properties
-    /// </summary>
+    // This class is needed as the concrete version of IFile.
     [SitecoreType(TemplateId = Templates.File.ID_String)]
-    public interface IFile : IBaseItem
+    public class DetailedFile : BaseItem, IFile
     {
         [SitecoreField(Templates.File.Fields.Title_String)]
-        string Title { get; set; }
+        public string Title { get; set; }
 
         [SitecoreField(Templates.File.Fields.Keywords_String)]
-        string Keywords { get; set; }
+        public string Keywords { get; set; }
 
         [SitecoreField(Templates.File.Fields.Description_String)]
-        string Description { get; set; }
+        public string Description { get; set; }
 
         [SitecoreField(Templates.File.Fields.Extension_String)]
-        string Extension { get; set; }
+        public string Extension { get; set; }
 
         [SitecoreField(Templates.File.Fields.MimeType_String)]
-        string MimeType { get; set; }
+        public string MimeType { get; set; }
 
         [SitecoreField(Templates.File.Fields.Size_String)]
-        double? Size { get; set; }
+        public double? Size { get; set; }
     }
 }
