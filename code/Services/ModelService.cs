@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using Glass.Mapper.Sc;
 using Sitecore.Data.Items;
 using Sitecore.Web;
@@ -7,7 +7,10 @@ namespace Sitecore.Foundation.Models.Services
 {
     public static class ModelService
     {
-        static Dictionary<string, SitecoreService> _sitecoreServices = new Dictionary<string, SitecoreService>();
+        const int _dictionaryConcurrencyLevel = 50; // When concurrency issue with regular dictionary was identified, there were ~40 threads in use so 50 is a guess at an appropriate number
+        const int _dictionaryInitialSize = 10; // Unlikely to be more than 10 sites in a solution
+        static ConcurrentDictionary<string, SitecoreService> _sitecoreServices
+            = new ConcurrentDictionary<string, SitecoreService>(_dictionaryConcurrencyLevel, _dictionaryInitialSize);
 
         public static SitecoreService SitecoreService
             => GetSitecoreService(Context.Site.SiteInfo);
